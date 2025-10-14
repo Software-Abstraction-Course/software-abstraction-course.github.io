@@ -16,7 +16,7 @@
     
     
       
-        <title>Concept Maps - 50.056 Software Abstraction Functional Programming</title>
+        <title>Emacs Configuration - 50.056 Software Abstraction Functional Programming</title>
       
     
     
@@ -58,7 +58,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#concept-maps" class="md-skip">
+        <a href="#emacs-configuration" class="md-skip">
           Skip to content
         </a>
       
@@ -94,7 +94,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Concept Maps
+              Emacs Configuration
             
           </span>
         </div>
@@ -207,7 +207,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../l1_course_handout/" class="md-nav__link">
+      <a href="../../../notes/l1_course_handout/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -240,6 +240,68 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installing-emacs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing Emacs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notation-for-emacs-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notation for Emacs Keys
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-major-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing Major Modes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-minor-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing Minor Mode
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuring
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reference
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -253,13 +315,68 @@
                   
 
 
-<h1 id="concept-maps">Concept Maps</h1>
-<p>Click on the images below to see the concept maps for each week lessons.</p>
+<h1 id="emacs-configuration">Emacs Configuration</h1>
+<p>Your instructors use Emacs so they recommend that you use Emacs. However, Emacs is not easy to pick up, but once you use it, you either love it or hate it. So it's your choice.</p>
+<p>Read through this page before you start choosing emacs. If you don't find it to your taste, choose other IDE. If you see this as a challenge, go ahead.</p>
+<h2 id="installing-emacs">Installing Emacs</h2>
+<p>The current version is Emacs 29.</p>
 <ul>
-<li><a href="../images/concept_maps_week01.jpg">Week 1 Concept Maps</a></li>
-<li><a href="../images/concept_maps_week02.jpg">Week 2 Concept Maps</a></li>
-<li><a href="../images/concept_maps_week03.jpg">Week 3 Concept Maps</a></li>
-<li><a href="../images/concept_maps_week04.jpg">Week 4 Concept Maps</a></li>
+<li>For MacOS users, see <a href="https://emacsformacosx.com">Emacs for Mac OS X download page</a>.</li>
+<li>For Linux users, most probably Emacs is already installed. See <a href="https://www.gnu.org/software/emacs/download.html">download page from GNU</a>.</li>
+<li>For Windows users, <a href="https://ftp.gnu.org/gnu/emacs/windows/emacs-29/">download emacs-$VERSION-installer.exe</a>.</li>
+</ul>
+<p>Emacs has a built-in Tutorial. Try that to know how to use Emacs.</p>
+<h2 id="notation-for-emacs-keys">Notation for Emacs Keys</h2>
+<p>In the following steps, you may need to use some of the commands in Emacs that requires to press certain keys. Here is the notation.</p>
+<ul>
+<li><code>C-key</code>: CONTROL key and additional <code>key</code> key. For example, <code>C-s</code> means you press CONTROL key and <code>s</code> key in the keyboard.</li>
+<li><code>M-key</code>: ALT key and additional <code>key</code> key. For example, <code>M-x</code> means you press ALT key and <code>x</code> key in the keyboard.</li>
+<li><code>RET</code>: ENTER key.</li>
+</ul>
+<h2 id="installing-major-modes">Installing Major Modes</h2>
+<p>After you install Emacs, you can install Racket Major Mode for Emacs. We recommend <a href="https://github.com/greghendershott/racket-mode">Racket-Mode</a>. To install racket-mode, follow the steps below.
+1. Add the following to your <code>~/.emacs.d/init.el</code>:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>(require &#39;package)
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>(add-to-list &#39;package-archives
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>              &#39;(&quot;melpa&quot; . &quot;https://melpa.org/packages/&quot;)
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>              t)
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>(package-initialize)
+</span></code></pre></div></p>
+<ol>
+<li>Restart Emacs.</li>
+<li>Type <code>M-x</code> <code>package-initialize</code> <code>RET</code>.</li>
+<li>Type <code>M-x</code> <code>package-refresh-contents</code> <code>RET</code>.</li>
+<li>Type <code>M-x</code> <code>package-install</code> <code>RET</code>.</li>
+</ol>
+<h2 id="installing-minor-mode">Installing Minor Mode</h2>
+<p>We recommend to install <a href="https://paredit.org/releases/26/paredit.el">Paredit</a> which is a minor mode in Emacs for pseudo-structurally edit programs in Lisp-like languages. It prevents you from accidentally unbalancing parantheses. To install Paredit, follow the steps below.</p>
+<ol>
+<li>Download <a href="https://paredit.org/releases/26/paredit.el">paraedit.el</a> and put it somewhere in your local computer. For example save it to <code>/path/to/paredit.el</code>. </li>
+<li>Add the following to your <code>~/.emacs.d/init.el</code>.
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>(add-to-list &#39;load-path &quot;/path/to/elisp&quot;)
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>(autoload &#39;enable-paredit-mode &quot;paredit&quot;
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>  &quot;Turn on pseudo-structural editing of Lisp code.&quot;
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>  t)
+</span></code></pre></div></li>
+</ol>
+<h2 id="configuring">Configuring</h2>
+<p>Edit your Emacs configuration file under <code>~/.emacs.d/init.el</code> and add the following:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>;; racket-mode
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>(add-to-list &#39;auto-mode-alist &#39;(&quot;\\.rkt\\&#39;&quot; . racket-mode))
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>(setq racket-racket-program &quot;/Applications/Racket v8.13/bin/racket&quot;)
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>(add-hook &#39;racket-mode-hook (lambda () (paredit-mode 1)))
+</span></code></pre></div></p>
+<ul>
+<li>The first line is to allow all <code>.rkt</code> files to use <code>racket-mode</code>. </li>
+<li>The second line is to set the path to the <code>racket</code> program. Change the path to the executable location of <code>racket</code> in your system. In the above example, the path is <code>/Applications/Racket v8.13/bin/racket</code> (An example of MacOS path). </li>
+<li>The last line is to add the minor mode to use <code>paredit-mode</code>.</li>
+</ul>
+<h2 id="reference">Reference</h2>
+<ul>
+<li><a href="https://www.masteringemacs.org/article/beginners-guide-to-emacs">Beginners Guide to Emacs</a></li>
+<li><a href="https://docs.racket-lang.org/guide/Emacs.html">Emacs Guide for Racket</a></li>
+<li><a href="https://www.racket-mode.com">Racket-Mode</a></li>
+<li><a href="https://paredit.org/releases/26/paredit.el">Paredit</a></li>
 </ul>
 
 
